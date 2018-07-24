@@ -1,0 +1,31 @@
+Write CSS so that link <a href="http://www.testdome.com">Check documentation</a> and cursor looks like:
+
+A stylish link with a hover-over mouse pointer.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Styling links</title>
+    <style type="text/css">
+      /* Write your CSS solution here (do not edit the surrounding HTML) */
+      a{
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: help;
+      }
+      
+      a:before{
+        content: ">";
+      }
+      a:after{
+       content: "<";
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <a href="http://www.testdome.com">Check documentation</a>
+  </body>
+</html>

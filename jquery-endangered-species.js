@@ -28,3 +28,28 @@ function endangeredSpecies(continent, species) {
   </ul>
 </div>
 */
+
+JavaScript solution
+
+After getting div children, you can filter for ul element that contains the specified continent and then look for li element that contains the specified species.
+
+function getStatus(elementChildren, species) {
+    var i;
+    for (i = 0; i < elementChildren.length; i++) {
+      if ($(elementChildren[i]).data("species") === species) {
+        return $(elementChildren[i]).text();
+      }
+    }
+  }
+
+function endangeredSpecies(continent, species) {
+  var divChildren = $("div").children();
+  var i;
+  var status = "";
+  for (i = 0; i < divChildren.length; i++) {
+    if ($(divChildren[i]).data("continent") === continent) {
+      status = getStatus($(divChildren[i]).children(), species);
+    }
+  }
+  return status;
+}

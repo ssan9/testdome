@@ -29,7 +29,7 @@ function setup() {
 
 // or using jQuery
 
-$('remove').click(function(e) {
+$('.remove').click(function(e) {
     $(this).parent().remove();
   });
 
